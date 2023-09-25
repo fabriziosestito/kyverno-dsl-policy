@@ -5,13 +5,6 @@ go 1.21.1
 replace (
 	github.com/jmespath/go-jmespath => github.com/kyverno/go-jmespath v0.4.1-0.20210511164400-a1d46efa2ed6
 	github.com/kyverno/kyverno => ./kyverno/kyverno/
-	github.com/sigstore/cosign => ./v2
-	// replace github.com/sigstore/sigstore/pkg/signature/kms/aws => ./fakedeps/aws
-
-	// replace github.com/sigstore/sigstore/pkg/signature/kms/azure => ./fakedeps/azure
-
-	// replace github.com/sigstore/sigstore/pkg/signature/kms/hashivault => ./fakedeps/hashivault
-
 	github.com/sigstore/k8s-manifest-sigstore => ./k8s-manifest-sigstore/ // TODO: replace with the next release of logrus
 	github.com/sirupsen/logrus => github.com/flavio/logrus v1.9.2-wasip1
 )
