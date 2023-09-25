@@ -52,7 +52,7 @@ func validateAdmissionReview(policySettings CliPolicySettings, request admission
 			Code(400))
 	}
 
-	//TODO: handle userInfo
+	// TODO: handle userInfo
 	engineContext := enginecontext.NewContext()
 	if err = engineContext.AddRequest(&request); err != nil {
 		return RejectRequest(
@@ -72,7 +72,7 @@ func validateAdmissionReview(policySettings CliPolicySettings, request admission
 		WithNewResource(newR).
 		WithOldResource(oldR)
 
-	er := engine.Validate(context.TODO(), registryclient.NewOrDie(), policyContext)
+	er := engine.Validate(context.TODO(), registryclient.Client{}, policyContext)
 
 	errorMsgs := []string{}
 	for index, r := range er.PolicyResponse.Rules {
